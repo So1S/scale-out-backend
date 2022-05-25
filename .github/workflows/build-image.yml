@@ -38,7 +38,7 @@ jobs:
         id: build_images
         run: |
           docker build .
-          docker tag jmt-monster-backend:latest public.ecr.aws/$AWS_ECR_ID/scale-out-backend:latest
+          docker tag scale-out-backend:latest public.ecr.aws/$AWS_ECR_ID/scale-out-backend:latest
           docker push public.ecr.aws/$AWS_ECR_ID/scale-out-backend:latest
         env:
           AWS_ECR_ID: ${{ secrets.AWS_ECR_ID }}
