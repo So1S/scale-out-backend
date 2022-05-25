@@ -37,7 +37,7 @@ jobs:
       - name: Build and push image & upload to ECR
         id: build_images
         run: |
-          docker build .
+          docker build . -t scale-out-backend:latest
           docker tag scale-out-backend:latest public.ecr.aws/$AWS_ECR_ID/scale-out-backend:latest
           docker push public.ecr.aws/$AWS_ECR_ID/scale-out-backend:latest
         env:
